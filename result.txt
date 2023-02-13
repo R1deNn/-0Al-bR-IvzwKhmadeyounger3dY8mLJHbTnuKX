@@ -1,0 +1,9 @@
+
+
+{"group_id":173748682,"type":"group_leave","event_id":"e10daef405ddb40df5c28e251fa36761c4e96a4b","v":"5.131","object":{"user_id":201407151,"self":1}}
+
+{"group_id":173748682,"type":"group_leave","event_id":"e10daef405ddb40df5c28e251fa36761c4e96a4b","v":"5.131","object":{"user_id":201407151,"self":1}}
+
+{"group_id":173748682,"type":"group_join","event_id":"7ba5f878dd70c2a65b0452637d15ac4c81877216","v":"5.131","object":{"user_id":201407151,"join_type":"join"}}
+{"group_id":173748682,"type":"group_join","event_id":"7ba5f878dd70c2a65b0452637d15ac4c81877216","v":"5.131","object":{"user_id":201407151,"join_type":"join"}}
+{"group_id":173748682,"type":"group_leave","event_id":"e10daef405ddb40df5c28e251fa36761c4e96a4b","v":"5.131","object":{"user_id":201407151,"self":1}}
