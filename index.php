@@ -10,7 +10,7 @@
             <div class="left_side_main_flex">
                 <div class="top_main_flex">
                     <h1>сделано<br><span class="rotate_span"><span class='unrotate_span'>молодежью</span></span><br>альметьевска</h1>
-                    <button>Подробнее</button>
+                    <button>Прочесть больше</button>
                 </div>
                 <div class="bottom_main_flex">
                     <img src="./assets/img/arrows_main.svg" alt="">
