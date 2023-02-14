@@ -1,7 +1,7 @@
 <?php
 
     $user = 'root';
-    $passbd = 'root';
+    $passbd = '';
     $dbname = 'made_young';
     $host = 'localhost';
 

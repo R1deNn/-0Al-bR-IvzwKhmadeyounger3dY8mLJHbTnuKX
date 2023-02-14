@@ -36,7 +36,7 @@
                         <?
                     }
                     ?>
-                    
+                    <div class="bg_menu">
                     <div id="br_menu_show">
                         <img src="./assets/img/x.svg" alt="" id='close_br_menu'>
 
@@ -113,6 +113,7 @@
                             </a>
                         </div>
                     </div>
+                    </div>
                 <?
                 } else {
                 ?>
@@ -123,7 +124,7 @@
                     <a>
                         <img id='brg_menu' src="./assets/img/burger_menu.svg" alt="">
                     </a>
-                    
+                    <div class="bg_menu">
                     <div id="br_menu_show">
                         <img src="./assets/img/x.svg" alt="" id='close_br_menu'>
 
@@ -199,6 +200,7 @@
                                 </div>
                             </a>
                         </div>
+                    </div>
                     </div>
                     </div>
                 <?
