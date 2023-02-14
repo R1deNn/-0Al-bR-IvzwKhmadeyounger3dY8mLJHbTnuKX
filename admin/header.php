@@ -7,7 +7,7 @@
     <div class="wrapper_index" id='wrapper_index'>
         <header>
             <div class="left_side_header">
-                <a href="./index.php"><img src="../assets/img/logo.svg" alt=""></a>
+                <a href="../index.php"><img src="../assets/img/logo.svg" alt=""></a>
             </div>
 
             <div class="right_side_header">
