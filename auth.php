@@ -7,7 +7,7 @@
     <div class="auth_wrapper">
         <form id="auth_form">
             <h1>вход в личный кабинет</h1>
-            <p>электронная почта</p>
+            <p>электронная почт</p>
             <input type="email" name='email'>
             <p>пароль</p>
             <input type="password" name='pass'>
