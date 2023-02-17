@@ -1,20 +1,28 @@
 <?
     require './vendor/connect.php';
+    $id = $_GET['id'];
+
+    if (strlen($id) >= 16) {
+        header('Location:http://localhost/-0Al-bR-IvzwKhmadeyounger3dY8mLJHbTnuKX/404.php');
+    }
 
     $sql = "SELECT * FROM `catalog` WHERE `id` = :id";
-    $id = $_GET['id'];
     $query = $pdo->prepare($sql);
     $query->execute(['id' => $id]);
 
     $product = $query->fetch(PDO::FETCH_OBJ);
-
-    require './layout/header.php';
-    $website_title = "$product->title - Сделано Молодежью";
-    require './layout/head.php';
     
     if (!empty($_SESSION['id'])) {
         require './vendor/user_info_from_bd.php';
     }
+    if($product->title === null){
+        header('Location:http://localhost/-0Al-bR-IvzwKhmadeyounger3dY8mLJHbTnuKX/404.php');
+        echo 'dadada';
+    }
+
+    require './layout/header.php';
+    $website_title = "$product->title - Сделано Молодежью";
+    require './layout/head.php';
 ?>
 <body>
     <div class="wrapper_buy">

@@ -590,11 +590,15 @@ footer{
     line-height: 30px;
 }
 .buy_btn_card_catalog{
-    padding: 7px 60px 7px 60px;
-    border-radius: 5px;
+    padding: 7px 80px 7px 80px;
+    border-radius: 10px;
     background-color: #000000;
     color: white;
     text-decoration: none;
+    transition: 0.3s ease-in;
+}
+.buy_btn_card_catalog:hover{
+    border-radius: 15px;
 }
 .btn_card_catalog{
     text-align: center;
@@ -606,7 +610,7 @@ footer{
     text-decoration: none;
 }
 .card_catalog p{
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .text_card_catalog{
     padding: 20px;
@@ -703,7 +707,7 @@ footer{
     line-height: 25px;
     background-color: #fff;
     border-radius: 10px 10px 10px 0px;
-    box-shadow: 0 0 7px #e6e6e6;
+    box-shadow: 7px 7px 13px #5e2b82;
     z-index: 1;
     /* background-image: url(../img/bcgc_test.png);
     background-repeat: no-repeat;
@@ -899,3 +903,29 @@ footer{
     backdrop-filter: blur(4px);
     transition: left ease 0.2s;
   }
+.notfound_block{
+    width: 100%;
+    margin: 150px auto;
+    text-align: center;
+}
+.home_a_notfound{
+    margin-top: 50px;
+}
+.home_a_notfound a{
+    padding: 7px 40px 7px 40px;
+    background-color: #5e2b82;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+}
+.home_a_notfound a:hover{
+    border-radius: 10px;
+}
+.img_card_catalog{
+    width: 100%;
+    max-height: 250px;
+}
+.img_card_catalog img{
+    border-radius: 10px 10px 0px 0px;
+}
