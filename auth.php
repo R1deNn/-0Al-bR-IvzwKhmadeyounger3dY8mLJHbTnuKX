@@ -1,4 +1,10 @@
 <?
+    session_start();
+    if(!empty($_SESSION['id'])){
+        header('Location:http://localhost/-0Al-bR-IvzwKhmadeyounger3dY8mLJHbTnuKX/index.php');
+        exit;
+    }
+
     require './layout/header.php';
     $website_title = 'Авторизация - Сделано Молодежью';
     require './layout/head.php';
