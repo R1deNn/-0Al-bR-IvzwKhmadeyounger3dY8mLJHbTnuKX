@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 19 2023 г., 16:08
+-- Время создания: Фев 21 2023 г., 11:45
 -- Версия сервера: 8.0.30
--- Версия PHP: 8.0.22
+-- Версия PHP: 8.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -75,8 +75,36 @@ CREATE TABLE `catalog` (
 --
 
 INSERT INTO `catalog` (`id`, `title`, `description`, `price`, `img`, `amount`) VALUES
-(1, 'Руслан', 'Неизлечимо болен с рождения', 1, './assets/img/ruslan.png', 0),
-(2, 'Богдан', 'Красивый, умный, превосходный', 225, './assets/img/bogdan.png', 0);
+(1, 'Руслан', 'Неизлечимо болен с рождения', 1, './assets/img/products/index.jpg', 0),
+(2, 'Богдан', 'Красивый, умный, превосходный', 225, './assets/img/products/index.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `news_events`
+--
+
+CREATE TABLE `news_events` (
+  `id` int UNSIGNED NOT NULL,
+  `title` varchar(128) NOT NULL,
+  `tiny_description` varchar(256) NOT NULL,
+  `description` varchar(5024) NOT NULL,
+  `img` varchar(1024) NOT NULL,
+  `date_start` datetime NOT NULL,
+  `date_end` datetime NOT NULL,
+  `free_space` int NOT NULL,
+  `age` int NOT NULL,
+  `type` int NOT NULL COMMENT '1 - новость\r\n2 - мероприятие'
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+
+--
+-- Дамп данных таблицы `news_events`
+--
+
+INSERT INTO `news_events` (`id`, `title`, `tiny_description`, `description`, `img`, `date_start`, `date_end`, `free_space`, `age`, `type`) VALUES
+(1, 'Уютный вечер', 'Тематический «Уютный вечер» ко дню влюбленных', 'Уютный вечер - это просмотр твоего любимого кино, в интеллектуально-досуговом центре «Сфера» по адресу: пр-т Строителей 30/2б (на территории парка «Здоровья»). ', './assets/img/news_events/48wJxQd-hRQ.jpg', '2023-02-15 16:00:00', '2023-02-15 20:00:00', 35, 0, 2),
+(2, 'Благотворительный сбор «сделайдобро.молодежь»', 'Мы приглашаем всех неравнодушных жителей города Альметьевск присоединиться к благотворительной акции ', 'Мы приглашаем всех неравнодушных жителей города Альметьевск присоединиться к благотворительной акции «сделайдобро.молодежь», направленной на помощь реабилитационному центру «Кошкин дом».\r\n\r\nСбор проходит по двум адресам:\r\n- м(п)к «Контакт на Маяковского» (ул. Маяковского 47А).\r\n- планетарий «Сфера» (пр-т. Строителей 30/2б, на территории парка «Здоровья»).\r\n\r\nМы принимаем со вторника по субботу, с 14:00 до 20:00.\r\nТелефон для справок: +7 (917) 925-28-19', './assets/img/news_events/b62aYQJXGdQ.jpg', '2023-02-20 00:00:00', '2023-03-20 23:00:00', 9999, 14, 1),
+(3, 'сделано молодежью альметьевска теперь в Telegram! ', 'Новости, опросы, обсуждения и все в одном telegram-канале. Подпишись, если хочешь быть в курсе всех событий', 'Новости, опросы, обсуждения и все в одном telegram-канале. Подпишись, если хочешь быть в курсе всех событий\r\n\r\nhttps://t.me/madeyouthalm', './assets/img/news_events/5XfVzp_B2oU.jpg', '2023-02-21 10:13:49', '2023-02-21 10:13:49', 9999, 14, 2);
 
 -- --------------------------------------------------------
 
@@ -105,7 +133,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `surname`, `email`, `tel`, `bth_day`, `password`, `date_reg`, `rules`, `balance`, `ip_reg`, `last_ip`, `img`) VALUES
-(1, 'Богдан', 'Бурмакин', 'r1den0403@icloud.com', 'Нет', '1975-12-12', '8e32cb6fcd1a753c231195dac2ddb6fe', '2023-01-17 09:16:15', 1, 99999099, '127.0.0.1', '127.0.0.1', './assets/img/avatars/bogdan.jpg');
+(1, 'Богдан', 'Бурмакин', 'r1den0403@icloud.com', 'Нет', '1975-12-12', '8e32cb6fcd1a753c231195dac2ddb6fe', '2023-01-17 09:16:15', 1, 99999099, '127.0.0.1', '127.0.0.1', './assets/img/avatars/bogdan.jpg'),
+(2, '123', '123', 'r1waddaw@icloud.com', 'Нет', '1975-12-12', '3a26f50dd4ffa1b2f2fb3e610fd88fd9', '2023-02-18 14:55:35', 0, 0, '127.0.0.1', '127.0.0.1', './assets/img/avatars/user.png');
 
 --
 -- Индексы сохранённых таблиц
@@ -121,6 +150,12 @@ ALTER TABLE `buy_list`
 -- Индексы таблицы `catalog`
 --
 ALTER TABLE `catalog`
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Индексы таблицы `news_events`
+--
+ALTER TABLE `news_events`
   ADD UNIQUE KEY `id` (`id`);
 
 --
@@ -146,10 +181,16 @@ ALTER TABLE `catalog`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT для таблицы `news_events`
+--
+ALTER TABLE `news_events`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
