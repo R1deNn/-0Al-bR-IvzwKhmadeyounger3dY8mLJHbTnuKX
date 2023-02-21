@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self'; font-src https://fonts.gstatic.com; img-src 'self';"> 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
     <script src="./assets/js/preload.js"></script>
 </head>

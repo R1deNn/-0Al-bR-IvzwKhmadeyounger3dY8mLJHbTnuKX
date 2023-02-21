@@ -12,7 +12,7 @@
             <div class="right_side_header">
                 <?
                 if (!empty($_SESSION['id'])) {
-                    require './vendor/user_info_from_bd.php';
+                    require_once './vendor/user_info_from_bd.php';
                     if ($user['rules'] == 1) {
                         ?>
                         <a href="./user.php">

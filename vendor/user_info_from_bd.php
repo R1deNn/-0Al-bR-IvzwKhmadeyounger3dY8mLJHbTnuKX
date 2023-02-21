@@ -1,5 +1,5 @@
 <?
-    require 'connect.php';
+    require_once 'connect.php';
     $sql = 'SELECT * FROM `users` WHERE `id` =:id';
 
 

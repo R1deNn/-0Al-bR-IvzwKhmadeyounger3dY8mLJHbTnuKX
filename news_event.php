@@ -1,15 +1,21 @@
 <?
-    require './layout/header.php';
     $id_ev_nw = $_GET['id'];
-    require './vendor/connect.php';
+    if (strlen($id_ev_nw) >= 16) {
+        header('Location:http://localhost/-0Al-bR-IvzwKhmadeyounger3dY8mLJHbTnuKX/404.php');
+    }
+    require_once './vendor/connect.php';
     $sql = 'SELECT * FROM `news_events` WHERE `id` = :id';
     $query = $pdo->prepare($sql);
     $query->execute(['id' => $id_ev_nw]);
 
     $event = $query->fetch(PDO::FETCH_OBJ);
 
+    if($event->title === null){
+        header('Location:http://localhost/-0Al-bR-IvzwKhmadeyounger3dY8mLJHbTnuKX/404.php');
+    }
+    require_once './layout/header.php';
     $website_title = "$event->title - Сделано Молодежью";
-    require './layout/head.php';
+    require_once './layout/head.php';
 ?>
 <body>
 <div class="wrapper_news_event">
@@ -19,7 +25,7 @@
 
     <div class="right_side_news_event">
         <h1><?=$event->title?></h1>
-        <p><?=$event->descr?></p>
+        <p><?=$event->description?></p>
         <p>Возрастное ограничение: с <?=$event->age?> лет</p>
         <p>Начало мероприятия: <?=date("d.m.Y H:i",strtotime($event->date_start))?></p>
             <?

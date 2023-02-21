@@ -27,56 +27,35 @@
     <h2 class="news_events">новости и мероприятия</h2>
     </div>
     <div class="news_and_events">
-        <div class="card_news_events">
-            <div class="card_img">
-                <img src="./assets/img/image 3.png" alt="">
-            </div>
-            <h3>Президент России поддержал идею «Тавриды»</h3>
-            <p>22 декабря Владимир Путин посетил Дом молодёжи, познакомился с  молодёжными проектами и поддержал предложение о создании первого молодёжно-просветительского  курорта в Крыму</p>
-            <div class="link_read">
-                <div class="link_read_left">
-                    <a href="#">Читать полностью</a>
-                </div>
+        <?
+            $sql = 'SELECT * FROM `news_events` ORDER BY `id` DESC LIMIT 3';
+            $query = $pdo->prepare($sql);
+            $query->execute();
 
-                <div class="link_read_right">
-                    <a href="#"><img src="./assets/img/arrow-right.svg" alt=""></a>
-                </div>
-            </div>
-        </div>
+            foreach($query as $n_e){
+                ?>
+                <div class="card_news_events">
+                    <div class="card_img">
+                        <a href="./news_event.php?id=<?=$n_e['id']?>">
+                            <img src="<?=$n_e['img']?>" alt="">
+                        </a>
+                    </div>
+                    <h3><?=$n_e['title']?></h3>
+                    <p><?=$n_e['description']?></p>
+                    <div class="link_read">
+                        <div class="link_read_left">
+                            <a href="./news_event.php?id=<?=$n_e['id']?>">Читать полностью</a>
+                        </div>
 
-        <div class="card_news_events">
-            <div class="card_img">
-                <img src="./assets/img/image 3.png" alt="">
-            </div>
-            <h3>Президент России поддержал идею «Тавриды»</h3>
-            <p>22 декабря Владимир Путин посетил Дом молодёжи, познакомился с  молодёжными проектами и поддержал предложение о создании первого молодёжно-просветительского  курорта в Крыму</p>
-            <div class="link_read">
-                <div class="link_read_left">
-                    <a href="#">Читать полностью</a>
+                        <div class="link_read_right">
+                            <a href="./news_event.php?id=<?=$n_e['id']?>"><img src="./assets/img/arrow-right.svg" alt=""></a>
+                        </div>
+                    </div>
                 </div>
+                <?
+            }
+        ?>
 
-                <div class="link_read_right">
-                    <a href="#"><img src="./assets/img/arrow-right.svg" alt=""></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card_news_events">
-            <div class="card_img">
-                <img src="./assets/img/image 3.png" alt="">
-            </div>
-            <h3>Президент России поддержал идею «Тавриды»</h3>
-            <p>22 декабря Владимир Путин посетил Дом молодёжи, познакомился с  молодёжными проектами и поддержал предложение о создании первого молодёжно-просветительского  курорта в Крыму</p>
-            <div class="link_read">
-                <div class="link_read_left">
-                    <a href="#">Читать полностью</a>
-                </div>
-
-                <div class="link_read_right">
-                    <a href="#"><img src="./assets/img/arrow-right.svg" alt=""></a>
-                </div>
-            </div>
-        </div>
         </div>
     </div>
 

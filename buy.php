@@ -17,7 +17,6 @@
     }
     if($product->title === null){
         header('Location:http://localhost/-0Al-bR-IvzwKhmadeyounger3dY8mLJHbTnuKX/404.php');
-        echo 'dadada';
     }
 
     require './layout/header.php';

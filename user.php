@@ -1,7 +1,7 @@
 <?
-    require './layout/header.php';
+    require_once './layout/header.php';
     $website_title = 'Личный кабинет - Сделано Молодежью';
-    require './layout/head.php';
+    require_once './layout/head.php';
     if (empty($_SESSION['id'])) {
         ?>
         <h1 style="text-align: center;">Страница доступна только авторизованным пользователям</h1>
@@ -9,7 +9,7 @@
         <?
         exit();
     } else {
-        require './vendor/user_info_from_bd.php';
+        require_once './vendor/user_info_from_bd.php';
 ?>
 <body>
     <div class="user_block">

@@ -31,9 +31,6 @@ class Authentication {
         if (array_intersect(explode(' ', $email), $black_list_chars)){
             $error = 'Исключите посторонние символы из введенных данных)';
         }
-        if (!preg_match("/[0-9a-z]+@[a-zA-Z0-9\-]+.[a-zA-Z0-9\-.]+$/", $email)) {
-            $error = 'Проверьте правильность почтового ящика'; 
-        }
         $password = md5($password.$this->hash);
         $sql = 'SELECT * FROM users WHERE email =:email && `password` =:pass LIMIT 1';
         $stmt = $this->pdo->prepare($sql);
