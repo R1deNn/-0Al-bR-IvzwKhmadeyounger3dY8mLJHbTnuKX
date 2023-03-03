@@ -17,6 +17,7 @@
             <input type="email" name='email'>
             <p>пароль</p>
             <input type="password" name='pass'>
+            <input type="hidden">
             <div class="auth_form_container slow_a">
                 <div class="left_auth_form">
                     <a href="./reg.php">зарегистрироваться</a>

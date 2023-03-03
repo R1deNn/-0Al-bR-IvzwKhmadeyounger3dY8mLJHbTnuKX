@@ -1,7 +1,9 @@
 <?
-    require './layout/header.php';
+    require_once './layout/header.php';
     $website_title = 'Главная - Сделано Молодежью';
-    require './layout/head.php';
+    require_once './layout/head.php';
+    require_once './vendor/models/main_user.php';
+    require_once './vendor/controllers/getPostsForIndex.php';
 ?>
 <body id='blured'>
     <div class="wrapper_index" id='wrapper_index'>
@@ -26,38 +28,8 @@
 
     <h2 class="news_events">новости и мероприятия</h2>
     </div>
-    <div class="news_and_events">
-        <?
-            $sql = 'SELECT * FROM `news_events` ORDER BY `id` DESC LIMIT 3';
-            $query = $pdo->prepare($sql);
-            $query->execute();
 
-            foreach($query as $n_e){
-                ?>
-                <div class="card_news_events">
-                    <div class="card_img">
-                        <a href="./news_event.php?id=<?=$n_e['id']?>">
-                            <img src="<?=$n_e['img']?>" alt="">
-                        </a>
-                    </div>
-                    <h3><?=$n_e['title']?></h3>
-                    <p><?=$n_e['description']?></p>
-                    <div class="link_read">
-                        <div class="link_read_left">
-                            <a href="./news_event.php?id=<?=$n_e['id']?>">Читать полностью</a>
-                        </div>
-
-                        <div class="link_read_right">
-                            <a href="./news_event.php?id=<?=$n_e['id']?>"><img src="./assets/img/arrow-right.svg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-                <?
-            }
-        ?>
-
-        </div>
-    </div>
+    <?require_once './vendor/view/index_news_events.php';?>
 
     <div class="wrapper_index">
         <div class="look_all_news">
@@ -95,6 +67,6 @@
         </div>
     </div>
 
-    <?require './layout/footer.php'?>
+    <?require_once './layout/footer.php'?>
 </body>
 </html>

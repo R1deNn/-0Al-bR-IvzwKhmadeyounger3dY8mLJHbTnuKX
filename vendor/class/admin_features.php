@@ -15,16 +15,16 @@
             }
         }
 
-        public function edit_product($title, $description, $price, $img, $amount){
-            if($this->secret_key === $rereofofofeppdpdsegse){
-                $sql = 'INSERT INTO `catalog`(`title`,`description`,`price`,`img`,`amount`) VALUES (?,?,?,?,?)';
-                $stmt = $this->pdo->prepare($sql);
-                $stmt->execute([$title, $description, $price, $img, $amount]);
-                http_response_code(202);
-            } else {
-                http_response_code(400);
-            }
-        }
+        // public function edit_product($title, $description, $price, $img, $amount){
+        //     if($this->secret_key === $rereofofofeppdpdsegse){
+        //         $sql = 'INSERT INTO `catalog`(`title`,`description`,`price`,`img`,`amount`) VALUES (?,?,?,?,?)';
+        //         $stmt = $this->pdo->prepare($sql);
+        //         $stmt->execute([$title, $description, $price, $img, $amount]);
+        //         http_response_code(202);
+        //     } else {
+        //         http_response_code(400);
+        //     }
+        // }
 
         public function add_event($rereofofofeppdpdsegse, $title, $tiny_description, $description, $img, $date_start, $date_end, $free_space){
             if($this->secret_key === $rereofofofeppdpdsegse){
@@ -58,7 +58,4 @@
                 http_response_code(400);
             }  
         }
-
-        public function 
     }
-    

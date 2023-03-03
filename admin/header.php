@@ -1,102 +1,40 @@
-<link rel="stylesheet" href="./assets/css/styles.css">
-<link rel="stylesheet" href="../assets/css/styles.css">
-<?
-    session_start();
-?>
-<body>
-    <div class="wrapper_index" id='wrapper_index'>
-        <header>
-            <div class="left_side_header">
-                <a href="../index.php"><img src="../assets/img/logo.svg" alt=""></a>
-            </div>
+<?session_start();?>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
 
-            <div class="right_side_header">
-                <?
-                if (!empty($_SESSION['id'])) {
-                    require '../vendor/user_info_from_bd.php';
-                    if ($user['rules'] == 1) {
-                        ?>
-                        <a href="./user.php">
-                        <img src="../assets/img/user.svg" alt="" width="25px">
-                        </a>
-                        <a href="./admin/admin_panel.php">
-                            <img src="../assets/img/admin.svg" alt="" width='30px'>
-                        </a>
-                        <a>
-                            <img id='brg_menu' src="../assets/img/burger_menu.svg" alt="">
-                        </a>
-                        <?
-                    } else {
-                        ?>
-                        <a href="./user.php">
-                        <img src="../assets/img/user.svg" alt="" width="25px">
-                        </a>
-                        <a>
-                            <img id='brg_menu' src="../assets/img/burger_menu.svg" alt="">
-                        </a>
-                        <?
-                    }
-                    ?>
-                    
-                    <div id="br_menu_show">
-                        <img src="../assets/img/x.svg" alt="" id='close_br_menu'>
-
-                        <div class="cards_bg_menu">
-                            <div class="card">
-                                <a href="#">Домой</a>
-                            </div>
-
-                            <div class="card">
-                                <a href="#">Домой</a>
-                            </div>
-
-                            <div class="card">
-                                <a href="#">Домой</a>
-                            </div>
-
-                            <div class="card">
-                                <a href="#">Домой</a>
-                            </div>
-                        </div>
-                    </div>
-                <?
-                } else {
-                ?>
-                    <a href="../auth.php">
-                        <img src="../assets/img/log_in.svg" alt="">
-                    </a>
-                     
-                    <a>
-                        <img id='brg_menu' src="../assets/img/burger_menu.svg" alt="">
-                    </a>
-                    
-                    <div id="br_menu_show">
-                        <img src="../assets/img/x.svg" alt="" id='close_br_menu'>
-
-                        <div class="cards_bg_menu">
-                            <div class="card">
-                                <a href="#">Домой</a>
-                            </div>
-
-                            <div class="card">
-                                <a href="#">Домой</a>
-                            </div>
-
-                            <div class="card">
-                                <a href="#">Домой</a>
-                            </div>
-
-                            <div class="card">
-                                <a href="#">Домой</a>
-                            </div>
-                        </div>
-                    </div>
-                <?
-                }
-                ?>
-            </div>
-        </header>
+  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Опции</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./admin_panel.php">Главная админ-панели</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Список пользователей</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Добавить товар</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Добавить мероприятие или новость</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Управление товарами</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Управление новостями</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <script src='../assets/js/menu.js'></script>
-</body>
-</html>
+
+    <a class="navbar-brand" href="../index.php"><img src='../assets/img/logo.svg'></a>
+  </div>
+</nav>
+    <script src='../assets/js/bootstrap.js'></script>
