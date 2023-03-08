@@ -1,9 +1,9 @@
 <?
     require_once './layout/header.php';
     $website_title = 'Главная - Сделано Молодежью';
-    require_once './layout/head.php';
     require_once './vendor/models/main_user.php';
     require_once './vendor/controllers/getPostsForIndex.php';
+    require_once './layout/head.php';
 ?>
 <body id='blured'>
     <div class="wrapper_index" id='wrapper_index'>

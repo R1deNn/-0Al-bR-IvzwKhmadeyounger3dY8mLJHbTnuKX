@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="./assets/css/styles.css">
-<link rel="stylesheet" href="../assets/css/styles.css">
 <?
     session_start();
 ?>
+<link rel="stylesheet" href="./assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
     <div class="wrapper_index" id='wrapper_index'>
         <header>
             <div class="left_side_header">
